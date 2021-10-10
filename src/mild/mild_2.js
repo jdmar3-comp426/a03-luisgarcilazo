@@ -24,7 +24,7 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-      let identityArray = [];
+      var identityArray = [];
       for (let x = 0; x<array.length; x++){
          identityArray.push(identifyVariable(array[x]));
       }
@@ -68,7 +68,7 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-      let objectClone = Object.assign({},object);
+      var objectClone = Object.assign({},object);
       delete objectClone[key];
       return objectClone;
 }
@@ -95,7 +95,7 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-      let objectClone = Object.assign({},object);
+      var objectClone = Object.assign({},object);
       for (let x=0; x<keyList.length; x++){
             delete objectClone[keyList[x]];
       }
