@@ -95,5 +95,9 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-
+      const objectClone = Object.assign({},object);
+      for (let x=0; x<keyList.length; x++){
+            delete objectClone[keyList[x]];
+      }
+      return objectClone;
 }
