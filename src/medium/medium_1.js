@@ -24,11 +24,11 @@ export function getSum(array) {
  */
 export function getMedian(array) {
     var arrayCopy = Array.from(array);
-    arrayCopy.sort();
+    arrayCopy.sort((a,b) => a -b);
     if (array.length % 2 == 0){
-        return (((array[Math.floor(array.length/2)] + array[Math.floor(array.length/2) - 1])/2 ))
+        return (((arrayCopy[Math.floor(array.length/2)] + arrayCopy[Math.floor(array.length/2) - 1])/2 ))
     } else {
-        return (array[Math.floor(array.length/2)])
+        return (arrayCopy[Math.floor(array.length/2)])
     }
 }
 
@@ -52,7 +52,13 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    return {length: array.length,sum: getSum(array), mean: getSum(array) / array.length, min: Math.min(...array),max: Math.max(...array), 
-            variance: variance(array, getSum(array) / array.length), standard_deviation: Math.sqrt(variance(array, getSum(array) / array.length))}
+    return {length: array.length,
+        sum: getSum(array),
+        mean: getSum(array) / array.length,
+        min: Math.min(...array),
+        max: Math.max(...array),
+        median: getMedian(array),
+        variance: variance(array, getSum(array) / array.length),
+        standard_deviation: Math.sqrt(variance(array, getSum(array) / array.length))}
 }
 

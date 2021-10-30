@@ -19,6 +19,7 @@ let obj = removeKeyNonDestructive(obj1, 'password');
 console.log(obj1)
 console.log(obj);
 console.log(getMedian([1,2,3,4,5,6]))
+console.log(getMedian([3,2,5,6,2,7,4,2,7,5]))
 console.log(getStatistics([3,2,4,5,5,5,2,6,7]))
 console.log(allCarStats)
 console.log(searchName(mpg_data,"kia"))
@@ -35,3 +36,6 @@ console.log(filter(['yes', 'nope', 'maybe', 'yellow'], x => x[0] === 'y'));
 console.log(filter([1, 90, 5, 31], x => x % 2 === 1));
 console.log(hasExactly(['yes', 'nope', 'maybe', 'yellow'], x => x[0] === 'y',2));
 console.log(hasExactly([1, 90, 5, 31], x => x % 2 === 1, 3));
+console.log(getMedian([3,2,5,6,2,7,4,2,7,5]))
+console.log(searchName(mpg_data,"Limited"))
+console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]))
