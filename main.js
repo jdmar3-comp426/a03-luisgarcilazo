@@ -42,3 +42,6 @@ console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]));
 repeat(console.log, 5, 'What up?');
 repeatDemo();
 console.log(moreStats.avgMpgByYearAndHybrid)
+console.log(allCarStats);
+repeat(console.log, 5, 'What up?');
+repeatDemo();
