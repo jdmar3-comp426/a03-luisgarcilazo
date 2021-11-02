@@ -40,3 +40,4 @@ console.log(getMedian([3,2,5,6,2,7,4,2,7,5]));
 console.log(searchName(mpg_data,"Limited"));
 console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]));
 repeat(console.log, 5, 'What up?');
+repeatDemo();
