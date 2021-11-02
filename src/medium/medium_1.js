@@ -55,9 +55,9 @@ export function getStatistics(array) {
     return {length: array.length,
         sum: getSum(array),
         mean: getSum(array) / array.length,
+        median: getMedian(array),
         min: Math.min(...array),
         max: Math.max(...array),
-        median: getMedian(array),
         variance: variance(array, getSum(array) / array.length),
         standard_deviation: Math.sqrt(variance(array, getSum(array) / array.length))}
 }
