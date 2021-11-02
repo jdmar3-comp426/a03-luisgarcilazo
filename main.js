@@ -1,6 +1,6 @@
 import mpg_data from "./src/medium/data/mpg_data.js";
 import { getMedian,getStatistics } from "./src/medium/medium_1.js";
-import { allCarStats } from "./src/medium/medium_2.js";
+import { allCarStats, moreStats } from "./src/medium/medium_2.js";
 import { searchByYear, searchName } from "./src/medium/medium_3.js";
 import { sumToString } from "./src/mild/mild_1.js";
 import { getIncreasingArray,countArray } from "./src/mild/mild_1.js";
@@ -41,3 +41,4 @@ console.log(searchName(mpg_data,"Limited"));
 console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]));
 repeat(console.log, 5, 'What up?');
 repeatDemo();
+console.log(moreStats.avgMpgByYearAndHybrid)
