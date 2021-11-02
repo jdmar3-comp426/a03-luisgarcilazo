@@ -6,7 +6,7 @@ import { sumToString } from "./src/mild/mild_1.js";
 import { getIncreasingArray,countArray } from "./src/mild/mild_1.js";
 import { maxAndMin } from "./src/mild/mild_1.js";
 import { identifyArray, identifyVariable,removeKey,removeKeyNonDestructive } from "./src/mild/mild_2.js";
-import { repeatDemo, tenTimes, tenTimesFifty, someEven, everyEven, filter, hasExactly } from "./src/spicy/spicy_9.js";
+import { repeatDemo, tenTimes, tenTimesFifty, someEven, everyEven, filter, hasExactly,repeat } from "./src/spicy/spicy_9.js";
 
 console.log(maxAndMin([1,2,3,-3,5,6,100,90,1880,2]));
 let obj1 = {
@@ -36,6 +36,7 @@ console.log(filter(['yes', 'nope', 'maybe', 'yellow'], x => x[0] === 'y'));
 console.log(filter([1, 90, 5, 31], x => x % 2 === 1));
 console.log(hasExactly(['yes', 'nope', 'maybe', 'yellow'], x => x[0] === 'y',2));
 console.log(hasExactly([1, 90, 5, 31], x => x % 2 === 1, 3));
-console.log(getMedian([3,2,5,6,2,7,4,2,7,5]))
-console.log(searchName(mpg_data,"Limited"))
-console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]))
+console.log(getMedian([3,2,5,6,2,7,4,2,7,5]));
+console.log(searchName(mpg_data,"Limited"));
+console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]));
+repeat(console.log, 5, 'What up?');

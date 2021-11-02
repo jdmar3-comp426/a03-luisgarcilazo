@@ -17,7 +17,7 @@
 export const repeat = (fn, n, ...params) => {
     let arrayReturn = new Array(n);
     for (let i = 0; i < n; i++){
-        arrayReturn.push(fn(params[i]));
+        arrayReturn.push(fn(params));
     }
 };
 
