@@ -20,9 +20,13 @@ see under the methods section
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: {city: mpg_data.reduce((previousValue, currentValue) => previousValue + currentValue.city_mpg, 0) / mpg_data.length,
+        highway: mpg_data.reduce((previousValue, currentValue) => previousValue + currentValue.highway_mpg, 0) / mpg_data.length},
+        allYearStats:
+        getStatistics(mpg_data.map(x => x.year)),
+        ratioHybrids: mpg_data.filter(function hybrid(x) {
+                return x.hybrid == true
+    }).length / mpg_data.length,            //using other format of using filter/reduce since I'm learning and want to learn both well
 };
 
 
@@ -84,6 +88,21 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
+    makerHybrids: {},
+    avgMpgByYearAndHybrid: {'2009':{hybrid: {city: (mpg_data.filter(x => x.hybrid == true && x.year == 2009).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2009).length),
+                                            highway: (mpg_data.filter(x => x.hybrid == true && x.year == 2009).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2009).length)},
+                                    notHybrid: {city: (mpg_data.filter(x => x.hybrid == false && x.year == 2009).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2009).length),
+                                                highway: (mpg_data.filter(x => x.hybrid == false && x.year == 2009).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2009).length)}},
+                            '2010':{hybrid: {city: (mpg_data.filter(x => x.hybrid == true && x.year == 2010).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2010).length),
+                                            highway: (mpg_data.filter(x => x.hybrid == true && x.year == 2010).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2010).length)},
+                                    notHybrid: {city: (mpg_data.filter(x => x.hybrid == false && x.year == 2010).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2010).length),
+                                                highway: (mpg_data.filter(x => x.hybrid == false && x.year == 2010).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2010).length)}},
+                            '2011':{hybrid: {city: (mpg_data.filter(x => x.hybrid == true && x.year == 2011).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2011).length),
+                                            highway: (mpg_data.filter(x => x.hybrid == true && x.year == 2011).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2011).length)},
+                                    notHybrid: {city: (mpg_data.filter(x => x.hybrid == false && x.year == 2011).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2011).length),
+                                            highway: (mpg_data.filter(x => x.hybrid == false && x.year == 2011).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2011).length)}},
+                            '2012':{hybrid: {city: (mpg_data.filter(x => x.hybrid == true && x.year == 2012).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2012).length),
+                                            highway: (mpg_data.filter(x => x.hybrid == true && x.year == 2012).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == true && x.year == 2012).length)},
+                                    notHybrid: {city: (mpg_data.filter(x => x.hybrid == false && x.year == 2012).reduce((previousValue,currentValue) => previousValue + currentValue.city_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2012).length),
+                                            highway: (mpg_data.filter(x => x.hybrid == false && x.year == 2012).reduce((previousValue,currentValue) => previousValue + currentValue.highway_mpg,0) / mpg_data.filter(x => x.hybrid == false && x.year == 2012).length)}}}
 };
